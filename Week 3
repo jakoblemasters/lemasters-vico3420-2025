@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Variables Demo</title>
+</head>
+<body>
+    <h1>JavaScript Variables Demonstration</h1>
+    <p id="output"></p>
+
+    <script>
+        let name = "Jakob";
+        let age = 20;
+        let city = "Parkersburg";
+
+
+        document.getElementById("output").innerHTML = 
+            "Name: " + name + "<br>" +
+            "Age: " + age + "<br>" +
+            "City: " + city + "<br>";
+        
+        // Update variables
+        name = "Jakob";
+        age = 20;
+        city = "Parkersburg";
+
+        let greeting = "Hello, my name is " + name + " and I live in " + city + ".";
+
+        let newAge = age + 5;
+        let ageDifference = newAge - age;
+        let doubleAge = age * 2;
+        let halfAge = age / 2;
+
+       
+        document.getElementById("output").innerHTML += "<br><br>Updated Name: " + name + "<br>Updated Age: " + age + "<br>Updated City: " + city + "<br>";
+        document.getElementById("output").innerHTML += "<br>" + greeting;
+        document.getElementById("output").innerHTML += "<br>In 5 years, I will be " + newAge + " years old.";
+        document.getElementById("output").innerHTML += "<br>The age difference is " + ageDifference + " years.";
+        document.getElementById("output").innerHTML += "<br>Twice my current age is " + doubleAge + ".";
+        document.getElementById("output").innerHTML += "<br>Half of my age is " + halfAge + ".";
+    </script>
+</body>
+</html>
