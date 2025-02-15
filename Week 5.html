@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Menu with Arrays</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+            font-size: 18px;
+        }
+        a:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Menu</h1>
+    <ul id="menu"></ul>
+    
+    <script>
+        const menuItems = [
+            ["#home", "Home"],
+            ["#about", "About Us"],
+            ["#services", "Services"],
+            ["#portfolio", "Portfolio"],
+            ["#contact", "Contact"]
+        ];
+
+        const menuList = document.getElementById("menu");
+        
+        for (let i = 0; i < menuItems.length; i++) {
+            let listItem = document.createElement("li");
+            let link = document.createElement("a");
+            link.href = menuItems[i][0];
+            link.textContent = menuItems[i][1];
+            listItem.appendChild(link);
+            menuList.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>
