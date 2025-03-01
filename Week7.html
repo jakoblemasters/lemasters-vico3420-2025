@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <label>Text Field:</label>
+        <input type="text" id="textField" required><br><br>
+
+        <label>Number Field:</label>
+        <input type="number" id="numberField" required><br><br>
+
+        <label>Checkbox:</label>
+        <input type="checkbox" id="checkboxField"> I agree<br><br>
+
+        <label>Radio Buttons:</label><br>
+        <input type="radio" name="radioGroup" value="Option 1"> Option 1
+        <input type="radio" name="radioGroup" value="Option 2"> Option 2<br><br>
+
+        <label>Dropdown Menu:</label>
+        <select id="dropdownField">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+        </select><br><br>
+
+        <label>Date Field:</label>
+        <input type="date" id="dateField"><br><br>
+
+        <button onclick="buttonFunction(event)">Submit</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+        function buttonFunction(event) {
+            event.preventDefault();
+            
+            let textValue = document.getElementById('textField').value;
+            let numberValue = document.getElementById('numberField').value;
+            let checkboxValue = document.getElementById('checkboxField').checked ? "Checked" : "Unchecked";
+            let radioValue = document.querySelector('input[name="radioGroup"]:checked');
+            let radioText = radioValue ? radioValue.value : "None Selected";
+            let dropdownValue = document.getElementById('dropdownField').value;
+            let dateValue = document.getElementById('dateField').value || "Not Selected";
+            
+            document.getElementById('output').innerHTML = `<strong>Form Data:</strong><br>
+                Text: ${textValue} <br>
+                Number: ${numberValue} <br>
+                Checkbox: ${checkboxValue} <br>
+                Radio: ${radioText} <br>
+                Dropdown: ${dropdownValue} <br>
+                Date: ${dateValue}`;
+            
+            document.body.style.backgroundColor = dropdownValue;
+        }
+    </script>
+</body>
+</html>
