@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Manipulation</title>
+    <style>
+        .color-box {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Array Manipulation</h1>
+    <p id="output"></p>
+    <div id="color-container"></div>
+    
+    <script>
+
+        let colors = ['Red', 'Blue', 'Green'];
+        document.getElementById('output').innerHTML += "Original array: " + colors + "<br>";
+
+        colors.push('Yellow', 'Purple', 'Orange');
+        document.getElementById('output').innerHTML += "After adding values: " + colors + "<br>";
+
+    
+        colors.sort();
+        document.getElementById('output').innerHTML += "Sorted array: " + colors + "<br>";
+
+
+        colors.pop();
+        document.getElementById('output').innerHTML += "After removing last item: " + colors + "<br>";
+
+        document.getElementById('output').innerHTML += "Second item in the array: " + colors[1] + "<br>";
+
+        let slicedColors = colors.slice(1, 4);
+        document.getElementById('output').innerHTML += "Sliced array (index 1 to 3): " + slicedColors + "<br>";
+
+        let container = document.getElementById('color-container');
+        colors.forEach(color => {
+            let div = document.createElement('div');
+            div.className = 'color-box';
+            div.style.backgroundColor = color.toLowerCase();
+            container.appendChild(div);
+        });
+    </script>
+</body>
+</html>
